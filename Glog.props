@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ImportGroup Label="PropertySheets"/>
+  
+  <!-- User Macros -->
+
+  <!-- Debug|Win32 -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\DevelopPackage\Glog\x86\vc15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\DevelopPackage\Glog\x86\vc15\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies Condition="'$(PlatformToolset)'=='v142'">glogd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+	<PostBuildEvent>
+      <Command>
+        echo D | xcopy /y /S "$(SolutionDir)../../DevelopPackage\Glog\x86\vc15\bin\glogd.dll" "$(TargetDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  
+  <!-- Release|Win32 -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\DevelopPackage\Glog\x86\vc15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\DevelopPackage\Glog\x86\vc15\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies Condition="'$(PlatformToolset)'=='v142'">glog.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+	<PostBuildEvent>
+      <Command>
+        echo D | xcopy /y /S "$(SolutionDir)../../DevelopPackage\Glog\x86\vc15\bin\glog.dll" "$(TargetDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  
+  <!-- Debug|Win64 -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\DevelopPackage\Glog\x64\vc15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\DevelopPackage\Glog\x64\vc15\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies Condition="'$(PlatformToolset)'=='v142'">glogd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+	<PostBuildEvent>
+      <Command>
+        echo D | xcopy /y /S "$(SolutionDir)../../DevelopPackage\Glog\x64\vc15\bin\glogd.dll" "$(TargetDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  
+  <!-- Release|Win64 -->
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\DevelopPackage\Glog\x64\vc15\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\DevelopPackage\Glog\x64\vc15\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies Condition="'$(PlatformToolset)'=='v142'">glog.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+	<PostBuildEvent>
+      <Command>
+        echo D | xcopy /y /S "$(SolutionDir)../../DevelopPackage\Glog\x64\vc15\bin\glog.dll" "$(TargetDir)"
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  
+</Project>
